@@ -19,6 +19,7 @@ namespace API.Controllers
 
         // GET: api/Tweets
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Tweet>>> GetTweets()
         {
             var tweets = await _tweetService.GetAllTweetsAsync();
